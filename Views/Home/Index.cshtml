@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewData["Title"] = "Sistema LH-Pet";
+}
+
+<div class="container mt-4">
+
+    <h1 class="text-center mb-4">
+        &gt; &gt; &gt; Sistema de Controle Interno - LH Pet &lt; &lt; &lt;
+    </h1>
+
+    <!-- TABELA DE CLIENTES -->
+    <table class="table table-hover table-sm table-bordered caption-top">
+        <caption>Lista de clientes</caption>
+
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nome</th>
+                <th scope="col">CPF</th>
+                <th scope="col">E-mail</th>
+                <th scope="col">Paciente (pet)</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in ViewBag.listaClientes)
+            {
+                <tr>
+                    <th scope="row">@item.Id</th>
+                    <td>@item.Nome</td>
+                    <td>@item.Cpf</td>
+                    <td>@item.Email</td>
+                    <td>@item.Paciente</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <br />
+
+    <!-- TABELA DE FORNECEDORES -->
+    <table class="table table-hover table-sm table-bordered caption-top">
+        <caption>Lista de fornecedores</caption>
+
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nome</th>
+                <th scope="col">CNPJ</th>
+                <th scope="col">E-mail</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in ViewBag.listaFornecedores)
+            {
+                <tr>
+                    <th scope="row">@item.Id</th>
+                    <td>@item.Nome</td>
+                    <td>@item.Cnpj</td>
+                    <td>@item.Email</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
